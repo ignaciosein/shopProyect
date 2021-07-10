@@ -27,7 +27,7 @@ const shopSchema= new Schema({
   },
 });
 
-shopSchema.plugin(AutoIncrement, { inc_field: "IdProd" });
+/* shopSchema.plugin(AutoIncrement, { inc_field: "IdProd" }); */
 const ProductsModel = mongoose.model("products", shopSchema);
 module.exports = ProductsModel;
 

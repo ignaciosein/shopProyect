@@ -1,72 +1,38 @@
-import React , {useState,useEffect} from 'react'
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
- const Products = () => {
-
-
-  const [products,setProduts] = useState([])
+const Products = () => {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-
-
-    axios('/api/nacho').then((resultado) =>  { 
-
-
-      console.log() 
-
-
-      for (let index = 0; index < resultado.data.length; index++) {
-    
-         setProduts(resultado.data[index])
-      }
-
-
-    } 
-    
-    
-    
-    )
- 
-  
-  }, [ ])
-    
-
-
-
- 
+    axios("/api/nacho").then((resultado) => {
+      setProducts(resultado.data);
+    });
+  }, []);
 
   console.log(products);
-
-
-
-
-
-
-
-
 
   return (
     <div>
       LISTADO DE PRODUCTOS:
-
-
       <ul>
+        {products.map((item, i) => (
+          <li key={i}>{item.Name}</li>
+        ))}
 
-    <li>Nombre {products.Name}</li>
-    <li>Precio {products.Price}</li>
-    <li>Nombre {products.Name}</li>
+        {products.map((item, i) => (
+          <li key={i}>{item.Price}</li>
+        ))}
+        {products.map((item, i) => (
+          <li key={i}>{item.Relevance}</li>
+        ))}
+        {/*      <li>Nombre {products.Name}</li>
 
-
-        
+        <li>Precio {products.Price}</li>
+        <li>Relevancia {products.Relevance}</li>  */}
       </ul>
-
-      
     </div>
-  )
-
-
-
-
-}
+  );
+};
 
 export default Products;
