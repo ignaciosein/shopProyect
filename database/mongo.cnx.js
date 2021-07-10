@@ -1,15 +1,15 @@
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+ const mongoose = require("mongoose");
  
-console.log(process.env.PORT);
-const mongoose = require("mongoose");
-                
+ let password =  process.env.PASS_DB ;
+ let shop = process.env.DB_NAME
+ 
+ 
+  const connectionS = `mongodb+srv://shop:${password}@cluster0.ej5za.mongodb.net/${shop}?retryWrites=true&w=majority`;
  
 
- 
-
-
-mongoose.connect(process.env.DB_SHOP,{ 
+  module.exports = () => mongoose.connect(connectionS,{ 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useCreateIndex : true,

@@ -16,21 +16,25 @@ class List extends Component {
 
   // Retrieves the list of items from the Express app
   getList = () => {
-    axios('/api/nacho').then((list) => {   console.log(list) ,this.setState({ list:list.data })})
+    axios('/api/nacho').then((list) => {   console.log(list.data) ,this.setState({ list:list.data })})
 
     
   }
   
+
+ 
   render() {
-    const { list } = this.state;
+
+    console.log(this.state.list)
+ /*    const { list } = this.state; */
 
     return (
       <div className="App">
-        <h1>List of Items</h1>
-        {/* Check to see if any items are found*/}
+      {/*   <h1>List of Items</h1>
+ 
         {list.length ? (
           <div>
-            {/* Render the list of items */}
+  
             {list.map((item ,i) => {
               return(
                 <div key={i}>
@@ -44,7 +48,7 @@ class List extends Component {
             <h2>No List Items Found</h2>
           </div>
         )
-      }
+      } */}
       </div>
     );
   }
