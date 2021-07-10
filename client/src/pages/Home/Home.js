@@ -9,6 +9,8 @@
        PAGINA HOME
 
     <button><Link to={"/products"}>VER PRODUCTOS</Link></button>
+    <button><Link to={"/addproducts"}>AÑADIR PRODUCTOS</Link></button>
+ 
      </div>
    )
  }

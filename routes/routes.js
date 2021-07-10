@@ -5,6 +5,7 @@ router.get("/api/getList",user.getDashboard)
 
 router.get("/api/nacho",user.getNacho)
 
+router.post("/addproductos",user.addProducts)
 
 
 // Handles any requests that don't match the ones above

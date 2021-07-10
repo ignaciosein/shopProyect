@@ -2,6 +2,14 @@
  * Products css File
 */
 
-.Products {
+.Products { 
+
+    font-size: 0.5rem;
+    
     /* propertys here */
+}
+
+img{
+
+    width: 5%;
 }
