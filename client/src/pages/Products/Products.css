@@ -4,7 +4,7 @@
 
 .Products { 
 
-    font-size: 0.5rem;
+    font-size: 0.2rem;
     
     /* propertys here */
 }
@@ -12,4 +12,16 @@
 img{
 
     width: 5%;
+}
+
+.hidden{
+
+    display: none;
+}
+
+.box-prod{
+    height: 100px;
+    background-color: red;
+
+
 }
