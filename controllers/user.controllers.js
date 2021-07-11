@@ -1,4 +1,6 @@
 const ShopModel = require("../database/models/schemas");
+const BrandsModel = require("../database/models/schemasBrands");
+
 const path = require("path");
 const connection = require("../database/mongo.cnx");
 const user = {
@@ -20,6 +22,19 @@ const user = {
       console.log("connection ok");
 
       res.json(allProducts);
+    } catch {}
+  },
+  getBrands: async (req, res) => {
+    try {
+      await connection();
+
+      const allBrands = await BrandsModel.find();
+
+      console.log(allBrands);
+
+      console.log("connection ok");
+
+      res.json(allBrands);
     } catch {}
   },
   addProducts:   (req, res) => {

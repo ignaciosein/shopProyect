@@ -4,6 +4,7 @@ const user = require("../controllers/user.controllers")
 router.get("/api/getList",user.getDashboard)
 
 router.get("/api/nacho",user.getNacho)
+router.get("/brands",user.getBrands)
 
 router.post("/addproductos",user.addProducts)
 
