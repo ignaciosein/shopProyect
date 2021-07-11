@@ -38,28 +38,21 @@ const Products = () => {
     setProducts(sorted);
   };
   const nextPage1 = () => {
-
-    document.getElementById("page1").style.display="none"
-    document.getElementById("page2").style.display="block"
-
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
   };
   const nextPage2 = () => {
-
-    document.getElementById("page2").style.display="none"
-    document.getElementById("page3").style.display="block"
-
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page3").style.display = "block";
   };
-  const backPage1 = () =>{
-
-    document.getElementById("page2").style.display="none"
-    document.getElementById("page1").style.display="block"
-  }
-  const backPage2 = () =>{
-
-    document.getElementById("page2").style.display="block"
-    document.getElementById("page3").style.display="none"
-  }
-
+  const backPage1 = () => {
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page1").style.display = "block";
+  };
+  const backPage2 = () => {
+    document.getElementById("page2").style.display = "block";
+    document.getElementById("page3").style.display = "none";
+  };
 
   console.log(products);
   /*   console.log(products[1]);
@@ -72,83 +65,115 @@ const Products = () => {
         <button onClick={priceAsc}>PRECIO ASCENDENTE</button>
         <button onClick={priceDesc}>PRECIO DESCENDENTE</button>
       </div>
-<table>
-    
-{products
-            .map((item, i) => (
+      <br></br>
+      
+    <div id="page1">
+    <button onClick={nextPage1}>Siguiente</button>
 
-              <tr key={i}>
-                <td><img src={item.Img}></img></td>
-                <td>{item.Name}</td>
-                <td>{item.Price}</td> 
-                <td>{item.Relevance} </td>  
-                 <td>{item.Brand}</td>
-                 <td>{item.Description}</td>
-           
-              </tr>
+      {products
+            .map((item, i) => (
+ 
+              <div className="box-prod" >
+                
+              <div class="box-img"><img src={item.Img}></img></div>
+      
+              <div class="box-details">
+                <div class="box-titleProd">
+                
+                {item.Name}
+                  <div />
+                </div>
+      
+                <div class="box-division">
+                  <div class="box-price">{item.Price}€</div>
+                 
+                </div>
+                <div class="box-description">{item.Description}</div>
+                
+              </div>
+            </div>
+            
+            
+            
+            
             ))
             .slice(0, 10)}
+  
+
+  </div>
 
 
+  <div id="page2" className="hidden">
+  <button onClick={backPage1}>Anterior</button>
+    <button onClick={nextPage2}>Siguiente</button>
 
-
-
-
-
-
-</table>
-    <div className="box-prod">
-
-
-
-
-
-
-
-    </div>
-
-
-      <ul>
-        <div id="page1">
-          <h1>PAGINA 1</h1>
-
-         
-
-          <button onClick={nextPage1}>Siguiente</button>
-        </div>
-        <div id="page2" className="hidden">
-          <h1>PAGINA 2</h1>
-          {products
+      {products
             .map((item, i) => (
-              <li key={i}>
-                <img src={item.Img}></img>
-                {item.Name} <h1>Precio: {item.Price} </h1>Relevancia{" "}
-                {item.Relevance} Marca: {item.Brand}
-                Descripción: {item.Description}
-              </li>
+ 
+              <div className="box-prod" >
+                
+              <div class="box-img"><img src={item.Img}></img></div>
+      
+              <div class="box-details">
+                <div class="box-titleProd">
+                
+                {item.Name}
+                  <div />
+                </div>
+      
+                <div class="box-division">
+                  <div class="box-price">{item.Price}€</div>
+                 
+                </div>
+                <div class="box-description">{item.Description}</div>
+                
+              </div>
+            </div>
+            
+            
+            
+            
             ))
             .slice(10, 20)}
-          {/*    {page2()} */}
-          <button onClick={backPage1}>Anterior</button>
-          <button onClick={nextPage2}>Siguiente</button>
-          
-        {/*   <button onClick={nextPage}>Anterior</button> */}
-        </div>
-        <div id="page3" className="hidden">
-          <h1>PAGINA 3</h1>
-          {products
+  
+
+  </div>
+  <div id="page3" className="hidden">
+    <button onClick={backPage2}>anterior</button>
+
+      {products
             .map((item, i) => (
-              <li key={i}>
-                <img src={item.Img}></img>
-                {item.Name} <h1>Precio: {item.Price}</h1> Relevancia{" "}
-                {item.Relevance} Marca: {item.Brand}
-                Descripción: {item.Description}
-              </li>
+ 
+              <div className="box-prod" >
+                
+              <div class="box-img"><img src={item.Img}></img></div>
+      
+              <div class="box-details">
+                <div class="box-titleProd">
+                
+                {item.Name}
+                  <div />
+                </div>
+      
+                <div class="box-division">
+                  <div class="box-price">{item.Price}€</div>
+                 
+                </div>
+                <div class="box-description">{item.Description}</div>
+                
+              </div>
+            </div>
+            
+            
+            
+            
             ))
             .slice(20, 30)}
-             <button onClick={backPage2}>Anterior</button>
-        </div>
-      </ul>
+  
+
+  </div>
+
+ 
     </div>
   );
 };
