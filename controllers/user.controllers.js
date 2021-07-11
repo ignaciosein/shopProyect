@@ -40,6 +40,24 @@ const user = {
       res.json(allProducts);
     } catch {}
   },
+  getdetailsBrand:  async (req, res) => {
+    try {
+
+      let valor = req.params.nameBrand
+
+      await connection();
+
+      const allProducts = await BrandsModel.findOne({ Name: valor }).exec();
+
+     
+      console.log("llega")
+   
+
+      res.json(allProducts);
+    } catch {}
+  },
+
+  
   getBrands: async (req, res) => {
     try {
       await connection();

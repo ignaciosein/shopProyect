@@ -8,6 +8,8 @@ router.get("/api/nacho",user.getNacho)
 router.get("/brands",user.getBrands)
 
 router.get("/api/products/:id",user.getdetails)
+router.get("/api/brands/:nameBrand",user.getdetailsBrand)
+ 
 router.get('/products/:id', (req,res) =>{
 	res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });

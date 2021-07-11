@@ -26,21 +26,26 @@ const Products = () => {
       let marca = producto.Brand.toLowerCase();
 
       if (nombre.indexOf(searchlCase) !== -1) {
-        document.getElementById("resultsSearch").innerHTML += `<p><img src='${producto.Img}' > ${producto.Name}</p>`;
+
+        console.log(producto.IdProd)
+
+
+        document.getElementById("resultsSearch").innerHTML += `<p><img src='${producto.Img}' > <a href='products/details/${producto.IdProd}'>${producto.Name}</a></p>`;
       } else if (searchlCase === "danone" || searchlCase === "Danone") { let arreglo = products.filter((item) => item.Brand.includes(`Danone`));
-        for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > ${arreglo[index].Name}</p>`;
+        for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' ><a href='products/details/${arreglo[index].IdProd}'> ${arreglo[index].Name}</a></p>`;
         }   break;
       } else if (searchlCase === "bimbo" || searchlCase === "Bimbo") { let arreglo = products.filter((item) => item.Brand.includes(`Bimbo`));
-      for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > ${arreglo[index].Name}</p>`;
+      for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' ><a href='products/details/${arreglo[index].IdProd}'> ${arreglo[index].Name}</a></p>`;
       }   break;
     } else if (searchlCase === "kaiku" || searchlCase === "Kaiku") { let arreglo = products.filter((item) => item.Brand.includes(`Kaiku`));
-    for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > ${arreglo[index].Name}</p>`;
+    for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' ><a href='products/details/${arreglo[index].IdProd}'> ${arreglo[index].Name}</a></p>`;
     }   break;
   } else if (searchlCase === "kellogs" || searchlCase === "Kellogs") { let arreglo = products.filter((item) => item.Brand.includes(`Kellogs`));
-  for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > ${arreglo[index].Name}</p>`;
+  for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' ><a href={'products/details/${arreglo[index].IdProd}'}> ${arreglo[index].Name}</a></p>`;
+                                                                                                                  
   }   break;
 } else if (searchlCase === "dulcesol" || searchlCase === "Dulcesol") { let arreglo = products.filter((item) => item.Brand.includes(`Dulcesol`));
-for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > ${arreglo[index].Name}</p>`;
+for (let index = 0; index < arreglo.length; index++) {document.getElementById("resultsSearch" ).innerHTML += `<p><img src='${arreglo[index].Img}' > <a href={'products/details/${arreglo[index].IdProd}'}> ${arreglo[index].Name} </a></p>`;
 }   break;
 
   }
@@ -114,12 +119,12 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
           .map((item, i) => (
             <div className="box-prod">
               <div class="box-img">
-         {/*      <img src={item.Img}></img> */}
+           <img src={item.Img}></img>  
               </div>
               <div class="box-details">
                 <div class="box-titleProd"> 
 
-                <a href={`/products/${item.IdProd}`}>{item.Name}</a>
+                <a href={`/products/details/${item.IdProd}`}>{item.Name}</a>
               
                   <div />
                 </div>
@@ -139,10 +144,10 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
         {products
           .map((item, i) => (
             <div className="box-prod">
-              <div class="box-img">{/* <img src={item.Img}></img> */}</div>
+              <div class="box-img"> <img src={item.Img}></img> </div>
               <div class="box-details">
                 <div class="box-titleProd">
-                  {item.Name}
+                <a href={`/products/details/${item.IdProd}`}>{item.Name}</a>
                   <div />
                 </div>
                 <div class="box-division">
@@ -161,11 +166,11 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
           .map((item, i) => (
             <div className="box-prod">
               <div class="box-img">
-        {/*       <img src={item.Img}></img> */}
+             <img src={item.Img}></img> 
               </div>
               <div class="box-details">
                 <div class="box-titleProd">
-                  {item.Name}
+                <a href={`/products/details/${item.IdProd}`}>{item.Name}</a>
                   <div />
                 </div>
                 <div class="box-division">

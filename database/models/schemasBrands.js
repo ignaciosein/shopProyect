@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
 const BrandsSchema= new Schema({
-  IdProd: {
+  CIF: {
     type: Number,
     required: true,
     unique: true,
@@ -13,18 +13,15 @@ const BrandsSchema= new Schema({
     type: String,
     required: true,
   },
-  Relevance: {
-    type: Number,
+  Adress: {
+    type: String,
     require: true,
   },
-  Price: {
-    type: Number,
+  Img: {
+    type: String,
     require: true,
   },
-  IdBusiness: {
-    type: Number,
-    required: true,
-  },
+ 
 });
 /* 
   shopSchema.plugin(AutoIncrement, { inc_field: "IdProd" });  */ 
