@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 import axios from "axios";
 import { debounce } from "debounce-react";
 import "./Products.css";
@@ -112,11 +114,13 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
           .map((item, i) => (
             <div className="box-prod">
               <div class="box-img">
-                {/*         <img src={item.Img}></img> */}
+         {/*      <img src={item.Img}></img> */}
               </div>
               <div class="box-details">
-                <div class="box-titleProd">
-                  {item.Name}
+                <div class="box-titleProd"> 
+
+                <a href={`/products/${item.IdProd}`}>{item.Name}</a>
+              
                   <div />
                 </div>
                 <div class="box-division">
@@ -135,7 +139,7 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
         {products
           .map((item, i) => (
             <div className="box-prod">
-              <div class="box-img">{/*     <img src={item.Img}></img> */}</div>
+              <div class="box-img">{/* <img src={item.Img}></img> */}</div>
               <div class="box-details">
                 <div class="box-titleProd">
                   {item.Name}
@@ -157,7 +161,7 @@ for (let index = 0; index < arreglo.length; index++) {document.getElementById("r
           .map((item, i) => (
             <div className="box-prod">
               <div class="box-img">
-                {/*       {     <img src={item.Img}></img> } */}
+        {/*       <img src={item.Img}></img> */}
               </div>
               <div class="box-details">
                 <div class="box-titleProd">
