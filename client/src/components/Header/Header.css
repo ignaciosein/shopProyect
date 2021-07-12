@@ -1,0 +1,72 @@
+/*
+ * Header css File
+*/
+
+.Header {   
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    background-color: black;
+   /*  background-color: rgb(116, 253, 116); */
+    /* propertys here */
+}
+
+.Banner{width: 50%; 
+
+    background-color: black;}
+.Banner > a>img{
+
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 8%;
+    width: 80%;
+}
+.divMenu{
+    display: flex;
+    width: 50%;
+flex-direction: row;
+/* background-color: blue; */}
+
+.LoginIcon{
+    
+    height: 100%;
+    background-color: red;
+    width: 70%;   
+}
+.menuBurgerIcon{
+    height: 100%;
+    background-color: green;
+    width: 30%;  
+}
+.container1{
+
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.container2{
+ 
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    height: 200px;
+    background-color: purple;
+    
+}
+.container3{
+ 
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    height: 200px;
+    background-color: red;
+    
+}
+.menuBurger{
+
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15%;
+    width: 80%;
+}
