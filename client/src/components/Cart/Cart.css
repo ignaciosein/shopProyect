@@ -1,0 +1,15 @@
+/*
+ * Cart css File
+*/
+
+.Cart {
+    /* propertys here */
+
+     
+}
+
+.Cart > img{
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 30%;
+}

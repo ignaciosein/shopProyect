@@ -31,13 +31,13 @@ flex-direction: row;
 .LoginIcon{
     
     height: 100%;
-    background-color: black;
-    width: 50%;   
+    background-color: red;
+    width: 70%;   
 }
 .menuBurgerIcon{
     height: 100%;
-    background-color: black;
-    width: 50%;  
+    background-color: green;
+    width: 30%;  
 }
 .container1{
 
@@ -54,8 +54,19 @@ flex-direction: row;
     background-color: purple;
     
 }
+.container3{
+ 
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    height: 200px;
+    background-color: red;
+    
+}
 .menuBurger{
 
-    margin-left: 30%;
-    width: 60%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15%;
+    width: 80%;
 }

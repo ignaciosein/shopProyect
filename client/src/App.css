@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+a{
+
+text-decoration: none;
+color: black
+
+
+}
+
+button > a{
+
+  color: white;
+}
