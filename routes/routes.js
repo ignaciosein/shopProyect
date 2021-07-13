@@ -4,7 +4,7 @@ const path = require('path');
 
 router.get("/api/getList",user.getDashboard)
 
-router.get("/api/nacho",user.getNacho)
+router.get("/api/allProducts",user.getAllProducts)
 router.get("/brands",user.getBrands)
 
 router.get("/api/products/:id",user.getdetails)

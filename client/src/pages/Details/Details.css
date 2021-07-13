@@ -16,11 +16,24 @@
 
   /* propertys here */
 }
+.Details > h4{
+text-align: center;
+padding-left: 5%;
+font-size: 2rem;
+ 
+ 
+}
+.Details > h4 > img{
+ 
+  border: solid black 4px;
 
+
+}
 .box-img-details > img {
   margin-left: 10%;
   margin-top: 10%;
   width: 80%;
+ 
 }
 
 .box-titleProd-details{

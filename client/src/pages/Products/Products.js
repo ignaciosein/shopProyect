@@ -9,9 +9,10 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [brands, setBrands] = useState([]);
   const [search, setSearch] = useState(null);
+  const [listSearch ,setListSearch] = useState([])
 
   useEffect(() => { axios("/api/allProducts").then((resultado) => {console.log(resultado.data.Brand);setProducts(resultado.data);});}, []);
-
+/* 
   useEffect(() => {
     document.getElementById("resultsSearch").innerHTML = "";
     for (let producto of products) {
@@ -70,7 +71,7 @@ const Products = () => {
         break;
       }
     }
-  }, [search]);
+  }, [search]); */
 
   const addToCart = (id) => {
     let ArrayClean = [];
@@ -127,13 +128,80 @@ const backPage2 = () => {    document.getElementById("page2").style.display = "b
 
   const productSearch = (e) => {document.getElementById("resultsSearch").innerHTML = ""; e.preventDefault();let productToSearch = e.target.value; if (productToSearch.trim() == "") { document.getElementById("resultsSearch").innerText = ""; } else { debounce(() => setSearch(productToSearch), 1500);  }  };
 
+
+  const pintarSearch = () =>{
+
+
+    document.getElementById("resultsSearch").innerHTML = "";
+    for (let producto of products) {
+      let searchlCase = search.toLowerCase();
+
+      let nombre = producto.Name.toLowerCase();
+      let marca = producto.Brand.toLowerCase();
+
+     
+      if (nombre.indexOf(searchlCase) !== -1) {
+    
+
+        return  (<p ><img src={producto.Img}></img> <Link to={`/products/details/${producto.IdProd}`}>{producto.Name}</Link></p>)  
+
+      } else if (searchlCase === "danone" || searchlCase === "Danone") {
+        let arreglo = products.filter((item) => item.Brand.includes(`Danone`));
+   
+        return  arreglo.map((item, i) => (<p key={i}><img src={item.Img}></img> <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></p>) )  
+
+      } else if (searchlCase === "bimbo" || searchlCase === "Bimbo") {
+        let arreglo = products.filter((item) => item.Brand.includes(`Bimbo`));
+
+        return  arreglo.map((item, i) => (<p key={i}><img src={item.Img}></img> <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></p>) )  
+
+      } else if (searchlCase === "kaiku" || searchlCase === "Kaiku") {
+        let arreglo = products.filter((item) => item.Brand.includes(`Kaiku`));
+
+        return  arreglo.map((item, i) => (<p key={i}><img src={item.Img}></img> <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></p>) )  
+
+      } else if (searchlCase === "kellogs" || searchlCase === "Kellogs") {
+        let arreglo = products.filter((item) => item.Brand.includes(`Kellogs`));
+        return  arreglo.map((item, i) => (<p key={i}><img src={item.Img}></img> <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></p>) )  
+
+      } else if (searchlCase === "dulcesol" || searchlCase === "Dulcesol") {
+        let arreglo = products.filter((item) =>
+          item.Brand.includes(`Dulcesol`)
+        );
+        return  arreglo.map((item, i) => (<p key={i}><img src={item.Img}></img> <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></p>) )  
+
+      }
+    
+    }
+
+
+
  
+
+    
+  }
+
+
+
+
+
+
+
+
   return (
     <div className="Products">
   
       <div className="search">
         <input type="text" name="pokemon" id="search"  onChange={productSearch}  placeholder="Busca un producto"  ></input>
-        <div id="resultsSearch" className="resultsSearch"></div>
+        <div id="resultsSearch" className="resultsSearch">
+
+            {search ?    pintarSearch()   : ""}
+
+
+
+
+
+        </div>
       </div>
       <div>
       <div className="filters">
@@ -152,7 +220,12 @@ const backPage2 = () => {    document.getElementById("page2").style.display = "b
           <div className="botonera">
           <button onClick={nextPage1}>Siguiente</button>
           </div>
-          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><a href={`/products/details/${item.IdProd}`}>{item.Name}</a></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(0, 10)  }
+          {products.length===0?   <p><h1>NO HAY PRODUCTOS</h1></p>
+          
+           
+          
+          
+         :  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(0, 10)  }
         </div>
         <div id="page2" className="hidden">
         <h5>Pagina 2</h5>
@@ -160,14 +233,14 @@ const backPage2 = () => {    document.getElementById("page2").style.display = "b
           <button onClick={backPage1}>Anterior</button>
           <button onClick={nextPage2}>Siguiente</button>
           </div>
-          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><a href={`/products/details/${item.IdProd}`}>{item.Name}</a></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(10, 20)  }
+          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(10, 20)  }
              </div>
         <div id="page3" className="hidden">
         <h5>Pagina 3</h5>
         <div className="botonera">
           <button onClick={backPage2}>Anterior</button>
           </div>
-          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><a href={`/products/details/${item.IdProd}`}>{item.Name}</a></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(20, 30)  }
+          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(20, 30)  }
          </div>
       </table>
     </div>
