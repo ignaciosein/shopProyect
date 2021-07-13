@@ -1,14 +1,19 @@
 /*
  * Home css File
 */
-
+.Background{
+    height: 600px;
+    background-image: url("../../img/bgimage2.jpg");
+    margin-bottom: -100%;
+ }
 .Home {
     display: flex;
- 
+    background-position: center center;
+    background-position: 50%;
+   
     flex-direction: column;
     align-items: center;
-
-
+ 
 }
 .Home >button{
     margin-top: 20%;
@@ -19,3 +24,5 @@
 width: 60%;
         
 }
+
+ 

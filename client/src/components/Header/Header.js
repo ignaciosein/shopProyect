@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import Logo from "../../img/logo.png";
 import MenuBurger from "../../img/menuBurger.png";
+import MenuBurgerClose from "../../img/menuBurgerClose.png";
 import Cart from "../../components/Cart";
 const Header = () => {
   const [menuBurger, setMenu] = useState(false);
@@ -48,7 +49,7 @@ const Header = () => {
             <div className="Login1"></div>
             <Cart />
           </div>
-          <div className="menuBurgerIcon"> <img className="menuBurger"  id="open" src={MenuBurger} onClick={menuBurgerOpen} ></img> <img className="menuBurger" id="close" src={MenuBurger} onClick={menuBurgerClose} ></img>
+          <div className="menuBurgerIcon"> <img className="menuBurger"  id="open" src={MenuBurger} onClick={menuBurgerOpen} ></img> <img className="menuBurger" id="close" src={MenuBurgerClose} onClick={menuBurgerClose} ></img>
           </div>
        
         </div>
@@ -56,7 +57,7 @@ const Header = () => {
       <div id="menuList" className="container2">
         <ul>
           <li>
-            {" "}
+          
             <Link to={"/"}>Home</Link>
           </li>
           <li>
@@ -65,7 +66,7 @@ const Header = () => {
         </ul>
       </div>
       <div id="cartList" className="container3">
-        {" "}
+   
       </div>
     </div>
   );

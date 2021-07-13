@@ -1,9 +1,11 @@
+ 
+
 .Products { 
     display: flex;
     flex-direction: column;
 
     font-size: 0.5rem;
- 
+    background-color: white;
 }
  
 

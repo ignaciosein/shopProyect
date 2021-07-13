@@ -6,6 +6,8 @@
  
  const Home = () => {
    return (
+     <div className="Background" >
+ 
      <div className="Home">
        
       <h1> Bienvenido a </h1>
@@ -14,6 +16,7 @@
     <button><Link to={"/products"}>VER PRODUCTOS</Link></button>
     <button><Link to={"/addproducts"}>AÑADIR PRODUCTOS</Link></button>
  
+    </div>
      </div>
    )
  }

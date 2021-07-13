@@ -1,5 +1,5 @@
 import React ,{useEffect,useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import axios from "axios";
 import "./Details.css"
 
@@ -51,7 +51,7 @@ console.log(productDetails)
                   <div class="box-price-details">{productDetails.Price}€</div>
                 </div>
                 <div class="box-description-details">{productDetails.Description}</div>
-                <div class="box-description-details"><h4>Fabricante:</h4> <a href={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </a>  </div> 
+                <div class="box-description-details"><h4>Fabricante:</h4> <Link to={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </Link>  </div> 
                 <button>Regresar</button>
 
                  

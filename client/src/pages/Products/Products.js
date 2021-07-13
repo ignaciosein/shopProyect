@@ -73,24 +73,26 @@ const Products = () => {
     }
   }, [search]); */
 
-  const addToCart = (id) => {
+  /* const addToCart = (id) => {
+
+  
     let ArrayClean = [];
 
     let recoveredData = localStorage.getItem("cart");
 
     if (recoveredData === null) {
-      let prodCart = [{ IdProd: id.target.value, }, ];localStorage.setItem("cart", JSON.stringify(prodCart));
+      let prodCart = [{ IdProd: id, }, ];localStorage.setItem("cart", JSON.stringify(prodCart));
 
       ArrayClean.push(prodCart);
     } else if (recoveredData !== null) {
       let data = JSON.parse(recoveredData);
 
-      console.log(data);
+     console(data);
 
       if (data.IdProd.includes(2)) {
-        alert("Ya existe el 2");
+      
         let prodCartNew = {
-          IdProd: id.target.value,
+          IdProd: id ,
         };
         data.push(prodCartNew);
         localStorage.setItem("cart", JSON.stringify(data));
@@ -110,7 +112,7 @@ const Products = () => {
         }
       }
     }
-  };
+  }; */
 
 const priceAsc = () => { const sorted = [...products].sort((a, b) => {return a.Price - b.Price; }); setProducts(sorted);};
 const priceDesc = () => { const sorted = [...products].sort((a, b) => { return b.Price - a.Price; }); setProducts(sorted);};
@@ -225,7 +227,7 @@ const backPage2 = () => {    document.getElementById("page2").style.display = "b
            
           
           
-         :  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(0, 10)  }
+         :  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg"  /* onClick={addToCart(item.IdProd)} */  src={addCartImg}></img></td> </tr> )).slice(0, 10)  }
         </div>
         <div id="page2" className="hidden">
         <h5>Pagina 2</h5>
@@ -233,14 +235,14 @@ const backPage2 = () => {    document.getElementById("page2").style.display = "b
           <button onClick={backPage1}>Anterior</button>
           <button onClick={nextPage2}>Siguiente</button>
           </div>
-          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(10, 20)  }
+          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg"  /* onClick={addToCart}  */src={addCartImg}></img></td> </tr> )).slice(10, 20)  }
              </div>
         <div id="page3" className="hidden">
         <h5>Pagina 3</h5>
         <div className="botonera">
           <button onClick={backPage2}>Anterior</button>
           </div>
-          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg" src={addCartImg}></img></td> </tr> )).slice(20, 30)  }
+          {products.length===0? <p><h1>NO HAY PRODUCTOS</h1></p>:  products.map((item, i) => (<tr key={i}><td><img src={item.Img}></img></td><td><Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link></td> <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td><td><img className="addCartImg"    /* onClick={addToCart} */ src={addCartImg}></img></td> </tr> )).slice(20, 30)  }
          </div>
       </table>
     </div>
