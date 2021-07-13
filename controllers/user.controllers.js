@@ -11,7 +11,7 @@ const user = {
 
     res.json(list);
   },
-  getNacho: async (req, res) => {
+  getAllProducts: async (req, res) => {
     try {
       await connection();
 

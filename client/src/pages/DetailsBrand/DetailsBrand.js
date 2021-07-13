@@ -25,13 +25,7 @@ const DetailsBrand = () => {
     });
   }, []);
 
- console.log(brandDetails)  
-
-
-
-
-
-
+   
   return (
     <div>
      
