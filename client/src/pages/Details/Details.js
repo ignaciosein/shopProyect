@@ -51,8 +51,8 @@ console.log(productDetails)
                   <div class="box-price-details">{productDetails.Price}€</div>
                 </div>
                 <div class="box-description-details">{productDetails.Description}</div>
-                <div class="box-description-details">Fabricante: <a href={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </a>  </div> 
-               
+                <div class="box-description-details"><h4>Fabricante:</h4> <a href={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </a>  </div> 
+                <button>Regresar</button>
 
                  
               </div>

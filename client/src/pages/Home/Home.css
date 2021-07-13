@@ -3,5 +3,19 @@
 */
 
 .Home {
-    /* propertys here */
+    display: flex;
+ 
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.Home >button{
+    margin-top: 20%;
+}
+
+.Home > img{
+
+width: 60%;
+        
 }

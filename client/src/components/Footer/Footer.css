@@ -3,9 +3,11 @@
 */
 
 .Footer {
-
-    background-color: black;
+    background-color: red;
+    margin-top: 100%;
     height: 50px;
-    margin-top: 10%;
+    bottom: 0;
+    width: 100%;
+    
     /* propertys here */
 }
