@@ -1,5 +1,5 @@
 import React ,{useEffect,useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import axios from "axios";
 import "./DetailsBrand.css"
 
@@ -45,6 +45,7 @@ const DetailsBrand = () => {
                  
                 </div>
                 <div class="box-description-details">{brandDetails.Adress}</div>
+                <button ><Link to={`/products`}>Regresar</Link></button>
               </div>
             </div>
          

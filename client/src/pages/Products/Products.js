@@ -20,10 +20,15 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
+  
+    
+     
+
+      filterSearch();
 
    
 
-    filterSearch();
+ 
 
 
 
@@ -80,12 +85,9 @@ const Products = () => {
   };
 
   const productSearch = (e) => {
+ 
 
-     
-
-     
-
-    document.getElementById("resultsSearch").innerHTML = "";  
+    document.getElementById("resultsSearch").innerText = "";  
 
     e.preventDefault();
     let productToSearch = e.target.value;
@@ -93,14 +95,20 @@ const Products = () => {
    
     if (productToSearch.trim() == "") {
       document.getElementById("resultsSearch").innerText = "";
-    } else {
-      debounce(() => setSearch(productToSearch), 1500);
-    }
+    } 
+    else{ 
+
+ debounce(() => setSearch(productToSearch), 1500);
+
+                }
+   
+     
+     
   };
 
   const paintSearch = () => {
     return filtrados.map((item) => (
-      <p>
+      <p >
         <img src={item.Img}></img>{" "}
         <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link>
       </p>
@@ -148,7 +156,7 @@ console.log(search)
       <div className="search">
         <input
           type="text"
-          name="pokemon"
+          name="searchProduct"
           id="search"
           onChange={productSearch}
           placeholder="Busca un producto"

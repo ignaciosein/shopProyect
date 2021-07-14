@@ -2,9 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
   font-family: 'Roboto', sans-serif;
+  
+}
+.AppBody{
+ 
+  @include desktop{
+  
+    width: 50%;
+    margin: 0 25%;
+   
+
+  }
+
 }
 .App {
   text-align: center;
+ 
   
 }
 
@@ -44,6 +57,11 @@ body{
 }
 
 a{
+  @include tablet {
+  
+    font-size: 1.4rem;
+
+  }
   @include mobile-landscape {
     
     

@@ -14,7 +14,7 @@
       <img src={Logo}></img>
 
     <button><Link to={"/products"}>VER PRODUCTOS</Link></button>
-    <button><Link to={"/addproducts"}>AÑADIR PRODUCTOS</Link></button>
+   
  
     </div>
      </div>

@@ -8,7 +8,7 @@ import Footer from "../src/components/Footer";
 
 function App() {
   return (
-    <div >
+    <div className="AppBody" >
    
    <BrowserRouter>  
 <Header/>
