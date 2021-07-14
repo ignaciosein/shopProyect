@@ -35,7 +35,7 @@ console.log(productDetails)
   return (
     <div>
      
-     { productDetails.length ===0 ?  <div className="Details">  <h4>No se puede mostrar información del artículo</h4> <img src="https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png"></img>  </div>:
+     { productDetails.length ===0 ?  <div className="Details">  <h4>No se puede mostrar información del artículo</h4> <img src="https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png"></img> <button ><Link to={`/products`}>Regresar</Link></button>  </div>:
             <div className="Details">
               <div class="box-img-details">
             <img src={productDetails.Img}></img>  
@@ -51,8 +51,8 @@ console.log(productDetails)
                   <div class="box-price-details">{productDetails.Price}€</div>
                 </div>
                 <div class="box-description-details">{productDetails.Description}</div>
-                <div class="box-description-details"><h4>Fabricante:</h4> <Link to={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </Link>  </div> 
-                <button>Regresar</button>
+                <div class="box-description-details"><h4>Fabricante: <Link to={`/products/detailsBrand/${productDetails.Brand}`}>  {productDetails.Brand} </Link></h4>   </div> 
+                <button ><Link to={`/products`}>Regresar</Link></button>
 
                  
               </div>

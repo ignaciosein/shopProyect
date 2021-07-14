@@ -1,10 +1,11 @@
  import React from 'react';
- import "./Footer.css"; 
+ import "./Footer.scss"; 
+ import FooterLogos from "../../img/footerLogos.png";
 
   const Footer = () => {
   return (
     <div className="Footer">
-      ESTE ES EL FOOTER
+   <img src={FooterLogos}></img>
     </div>
   )
 }

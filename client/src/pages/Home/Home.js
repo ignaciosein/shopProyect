@@ -1,6 +1,6 @@
  import React  from 'react';
  import {Link} from "react-router-dom";
- import "./Home.css"
+ import "./Home.scss"
  import  Logo from "../../img/logo.png"; 
  
  
@@ -14,7 +14,7 @@
       <img src={Logo}></img>
 
     <button><Link to={"/products"}>VER PRODUCTOS</Link></button>
-    <button><Link to={"/addproducts"}>AÑADIR PRODUCTOS</Link></button>
+   
  
     </div>
      </div>
