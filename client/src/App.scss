@@ -1,3 +1,4 @@
+@import "./Sass/_querys";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
   font-family: 'Roboto', sans-serif;
@@ -43,7 +44,13 @@ body{
 }
 
 a{
+  @include mobile-landscape {
+    
+    
+  font-size: 1.2rem;
+    
 
+  }
 text-decoration: none;
 color: black
 
@@ -53,5 +60,30 @@ color: black
 button > a{
 
   color: white;
+  @include tablet {
+  
+    font-size: 1.4rem;
+
+  }
+}
+button {
+
+  @include tablet {
+    border-radius: 9px;
+    width: 40%;
+    
+    justify-content: center;
+
+ 
+
+    
+   
+    
+
+  }
+
+
 }
 
+
+ 

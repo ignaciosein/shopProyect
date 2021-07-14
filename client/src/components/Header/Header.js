@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./Header.scss";
 import Logo from "../../img/logo.png";
 import MenuBurger from "../../img/menuBurger.png";
 import MenuBurgerClose from "../../img/menuBurgerClose.png";
@@ -40,14 +40,14 @@ const Header = () => {
     <div className="Header">
       <div className="container1">
         <div className="Banner">
-          <a href="/">
+          <Link  to="/">
             <img src={Logo}></img>
-          </a>
+          </Link>
         </div>
         <div className="divMenu">
           <div className="LoginIcon">
             <div className="Login1"></div>
-            <Cart />
+      
           </div>
           <div className="menuBurgerIcon"> <img className="menuBurger"  id="open" src={MenuBurger} onClick={menuBurgerOpen} ></img> <img className="menuBurger" id="close" src={MenuBurgerClose} onClick={menuBurgerClose} ></img>
           </div>
