@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import relevanceIcon from "../../img/relevanceIcon.png"
 import addCartImg from "../../img/addCart.png";
 import { debounce } from "debounce-react";
 import "./Products.scss";
@@ -169,7 +170,7 @@ console.log(search)
         <div className="filters">
           <button onClick={priceAsc}>€ ↑</button>
           <button onClick={priceDesc}>€ ↓</button>
-          <button onClick={relevanceDesc}>👎🔎 ↓</button>
+          <button onClick={relevanceDesc}>👍🔎 ↓</button>
           <button onClick={relevanceAsc}>👍🔎 ↑</button>
           <button onClick={nameDesc}>A-Z ↓</button>
           <button onClick={nameAsc}>Z-A ↑</button>
@@ -198,7 +199,7 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td>
+                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
                   
                 </tr>
               ))
@@ -227,7 +228,7 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td>
+                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
                   
                 </tr>
               ))
@@ -255,7 +256,7 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td>👍🔎{item.Relevance}/5</td>
+                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
                   
                 </tr>
               ))
