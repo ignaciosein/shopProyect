@@ -2,6 +2,7 @@
  * Header css File
 */
 @import "../../Sass/mixins";
+@import "../../Sass/_animations";
 @import "../../Sass/_querys";
 .Header {   
 
@@ -101,6 +102,7 @@ flex-direction: row;
     flex-direction: row;
 }
 .container2{
+    @include slide-bottom();
     display: flex;
     flex-direction: column;
     display: none;
@@ -114,6 +116,8 @@ flex-direction: row;
         height: 200px;
         
       }
+
+      
     
 }
 .container2 > ul > li {
@@ -190,3 +194,5 @@ flex-direction: row;
     color: white;
     font-weight: bolder;
 }
+
+@keyframes slide-bottom{0%{transform:translateY(-20px)}100%{transform:translateY(5px)}}

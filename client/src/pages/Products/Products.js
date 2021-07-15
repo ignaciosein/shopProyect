@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import relevanceIcon from "../../img/relevanceIcon.png"
+import relevanceIcon from "../../img/relevanceIcon.png";
 import addCartImg from "../../img/addCart.png";
 import { debounce } from "debounce-react";
 import "./Products.scss";
@@ -15,24 +15,14 @@ const Products = () => {
 
   useEffect(() => {
     axios("/api/allProducts").then((resultado) => {
-      console.log(resultado.data.Brand);
+  
       setProducts(resultado.data);
+    
     });
   }, []);
 
   useEffect(() => {
-  
-    
-     
-
-      filterSearch();
-
-   
-
- 
-
-
-
+    filterSearch();
   }, [search]);
 
   const priceAsc = () => {
@@ -86,37 +76,28 @@ const Products = () => {
   };
 
   const productSearch = (e) => {
- 
-
-    document.getElementById("resultsSearch").innerText = "";  
+    document.getElementById("resultsSearch").innerText = "";
 
     e.preventDefault();
     let productToSearch = e.target.value;
 
-   
     if (productToSearch.trim() == "") {
       document.getElementById("resultsSearch").innerText = "";
-    } 
-    else{ 
-
- debounce(() => setSearch(productToSearch), 1500);
-
-                }
-   
-     
-     
+    } else {
+      debounce(() => setSearch(productToSearch), 1500);
+    }
   };
 
   const paintSearch = () => {
     return filtrados.map((item) => (
-      <p >
+      <p>
         <img src={item.Img}></img>{" "}
         <Link to={`/products/details/${item.IdProd}`}>{item.Name}</Link>
       </p>
     ));
   };
 
-console.log(search)
+ 
 
   const filterSearch = () => {
     let arraysss = [];
@@ -199,8 +180,11 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
-                  
+                  <td>{item.Price}€</td>{" "}
+                  <td>
+                    <img src={relevanceIcon}></img>
+                    {item.Relevance}/5
+                  </td>
                 </tr>
               ))
               .slice(0, 10)
@@ -228,8 +212,11 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
-                  
+                  <td>{item.Price}€</td>{" "}
+                  <td>
+                    <img src={relevanceIcon}></img>
+                    {item.Relevance}/5
+                  </td>
                 </tr>
               ))
               .slice(10, 20)
@@ -256,8 +243,11 @@ console.log(search)
                       {item.Name}
                     </Link>
                   </td>{" "}
-                  <td>{item.Price}€</td> <td><img src={relevanceIcon}></img>{item.Relevance}/5</td>
-                  
+                  <td>{item.Price}€</td>{" "}
+                  <td>
+                    <img src={relevanceIcon}></img>
+                    {item.Relevance}/5
+                  </td>
                 </tr>
               ))
               .slice(20, 30)
