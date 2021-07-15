@@ -2,6 +2,7 @@
  * Header css File
 */
 @import "../../Sass/mixins";
+@import "../../Sass/_animations";
 @import "../../Sass/_querys";
 .Header {   
 
@@ -101,19 +102,22 @@ flex-direction: row;
     flex-direction: row;
 }
 .container2{
+    @include slide-bottom();
     display: flex;
     flex-direction: column;
     display: none;
     width: 100%;
     flex-direction: row;
     height: 200px;
-    background-color: #00B100;
+    background-color: #03bb03;
     @include tablet {
   
         font-size: 1.4rem;
         height: 200px;
         
       }
+
+      
     
 }
 .container2 > ul > li {
@@ -146,7 +150,7 @@ flex-direction: row;
      }
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 15%;
+    margin-top: 10%;
     width: 80%;
 }
 .container2 > ul{
@@ -190,3 +194,5 @@ flex-direction: row;
     color: white;
     font-weight: bolder;
 }
+
+@keyframes slide-bottom{0%{transform:translateY(-20px)}100%{transform:translateY(5px)}}

@@ -5,7 +5,7 @@ import "./Header.scss";
 import Logo from "../../img/logo.png";
 import MenuBurger from "../../img/menuBurger.png";
 import MenuBurgerClose from "../../img/menuBurgerClose.png";
-import Cart from "../../components/Cart";
+ 
 const Header = () => {
   const [menuBurger, setMenu] = useState(false);
 
@@ -34,8 +34,10 @@ const Header = () => {
     
   };
     
- 
-
+/*  const hiddenMenuBurger = () =>{
+   document.getElementById("menuList").style.display="none"
+ }
+ */
   return (
     <div className="Header">
       <div className="container1">
@@ -56,12 +58,12 @@ const Header = () => {
       </div>
       <div id="menuList" className="container2">
         <ul>
-          <li>
+        <li  onClick={menuBurgerClose}  >
           
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}  >Home</Link>
           </li>
-          <li>
-            <Link to={"/products"}>Productos</Link>
+          <li  onClick={menuBurgerClose}  >
+            <Link to={"/products"} >Productos</Link>
           </li>
         </ul>
       </div>

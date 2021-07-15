@@ -10,11 +10,11 @@ const Details = () => {
 
  const params = useParams();
 
-  console.log(params.id)
+ 
   
   useEffect(() => {
     axios(`/api/products/${params.id}`).then((resultado) => {
-      console.log(resultado );
+ 
 
 
       setProDetails(resultado.data)
@@ -25,7 +25,7 @@ const Details = () => {
     });
   }, []);
 
-console.log(productDetails)
+ 
 
 
 
