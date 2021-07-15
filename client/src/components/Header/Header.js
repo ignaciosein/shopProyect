@@ -1,0 +1,77 @@
+import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Header.scss";
+import Logo from "../../img/logo.png";
+import MenuBurger from "../../img/menuBurger.png";
+import MenuBurgerClose from "../../img/menuBurgerClose.png";
+ 
+const Header = () => {
+  const [menuBurger, setMenu] = useState(false);
+
+  useEffect(() => {}, [menuBurger]);
+
+  const menuBurgerOpen = () => {
+    let menuList = document.getElementById("menuList");
+    let open = document.getElementById("open");
+    let close = document.getElementById("close");
+
+    open.style.display ="none"
+    close.style.display ="block"
+      menuList.style.display = "block";
+    
+  };
+
+  
+  const menuBurgerClose = () => {
+    let menuList = document.getElementById("menuList");
+    let open = document.getElementById("open");
+    let close = document.getElementById("close");
+
+    open.style.display ="block"
+    close.style.display ="none"
+      menuList.style.display = "none";
+    
+  };
+    
+/*  const hiddenMenuBurger = () =>{
+   document.getElementById("menuList").style.display="none"
+ }
+ */
+  return (
+    <div className="Header">
+      <div className="container1">
+        <div className="Banner">
+          <Link  to="/">
+            <img src={Logo}></img>
+          </Link>
+        </div>
+        <div className="divMenu">
+          <div className="LoginIcon">
+            <div className="Login1"></div>
+      
+          </div>
+          <div className="menuBurgerIcon"> <img className="menuBurger"  id="open" src={MenuBurger} onClick={menuBurgerOpen} ></img> <img className="menuBurger" id="close" src={MenuBurgerClose} onClick={menuBurgerClose} ></img>
+          </div>
+       
+        </div>
+      </div>
+      <div id="menuList" className="container2">
+        <ul>
+        <li  onClick={menuBurgerClose}  >
+          
+            <Link to={"/"}  >Home</Link>
+          </li>
+          <li  onClick={menuBurgerClose}  >
+            <Link to={"/products"} >Productos</Link>
+          </li>
+        </ul>
+      </div>
+      <div id="cartList" className="container3">
+   
+      </div>
+    </div>
+  );
+};
+
+export default Header;

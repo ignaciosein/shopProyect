@@ -1,0 +1,198 @@
+/*
+ * Header css File
+*/
+@import "../../Sass/mixins";
+@import "../../Sass/_animations";
+@import "../../Sass/_querys";
+.Header {   
+
+    @include tablet {
+  
+        font-size: 1.4rem;
+ 
+      }
+      @include mobile-landscape {
+    
+  
+      
+        
+    
+      }
+      @include desktop{
+  
+         height: 100;
+       
+    
+    
+      }
+    display: flex;
+    flex-direction: column;
+ 
+    width: 100%;
+    background-color: black;
+   /*  background-color: rgb(116, 253, 116); */
+    /* propertys here */
+}
+
+.Banner{
+    width: 50%; 
+
+    background-color: black;}
+   
+    
+  
+.Banner > a>img{
+
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 8%;
+    width: 80%;
+
+    @include mobile-landscape {
+    
+        width: 60%;
+      
+ 
+        
+    
+      }
+      @include desktop{
+  
+        width: 60%;
+        margin-bottom: 20px;
+      
+   
+   
+     }
+}
+.divMenu{
+    display: flex;
+    width: 50%;
+flex-direction: row;
+/* background-color: blue; */}
+
+.LoginIcon{
+    
+    height: 100%;
+ /*    background-color: red; */
+    width: 70%;   
+}
+.menuBurgerIcon{
+    height: 100%;
+    background-color: black;
+    width: 30%;  
+    @include desktop{
+  
+        height: 50px;
+      
+   
+   
+     }
+}
+.container1{
+ 
+    @include mobile-landscape {
+    
+      height: 75px;
+        
+    
+      }
+  
+    display: flex;
+    flex-direction: row;
+}
+.container2{
+    @include slide-bottom();
+    display: flex;
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    height: 200px;
+    background-color: #03bb03;
+    @include tablet {
+  
+        font-size: 1.4rem;
+        height: 200px;
+        
+      }
+
+      
+    
+}
+.container2 > ul > li {
+    color: white;
+}
+.container3{
+ 
+    display: none;
+    width: 100%;
+    flex-direction: row;
+    height: 200px;
+    background-color: red;
+    
+}
+.menuBurger{
+
+    @include mobile-landscape {
+    
+        width: 55%;
+    
+        
+    
+      }
+      @include desktop{
+  
+        width: 60%;
+      
+   
+   
+     }
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    width: 80%;
+}
+.container2 > ul{
+  
+    margin-left: -15%;
+    list-style: none;
+    font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        margin-left: -2%;
+        font-size: 1.4rem;
+        height: 900px;
+        
+      }
+
+      @include mobile-landscape {
+    
+    
+        margin-left: -5%;
+        
+    
+      }
+      
+}
+
+#close{
+
+    display: none;
+}
+
+#menuList > ul > li > a{
+    @include tablet {
+        
+        font-size: 3rem;
+ 
+        
+      }
+    color: white;
+    font-weight: bolder;
+}
+
+@keyframes slide-bottom{0%{transform:translateY(-20px)}100%{transform:translateY(5px)}}
